@@ -13,7 +13,7 @@ Char::Char(int size[2], int position[2], int speed, int directionx, int directio
 
 
 int *Char::getSize() {
-    return this->size;
+    return this->size; //oi
 }
 
 int *Char::getPosition() {
