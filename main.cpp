@@ -1,22 +1,35 @@
+#include <iostream>
 #include <SFML/Graphics.hpp>
-#include "include/char.h"
+#include <SFML/Audio.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Network.hpp>
+#include "include/Char.h"
 
 
 int main(int argc, char const *argv[]) {
-    sf::RenderWindow window(sf::VideoMode(1200, 900), "PokeUFSC");
+
+    sf::RenderWindow window(sf::VideoMode(800, 600), "PokeUFSC", sf::Style::Titlebar | sf::Style::Close);
+    sf::Event evento;
     while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                window.close();
-            }
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Num1) {
-                    // Fazer algo (teste)
-                }
+        while (window.pollEvent(evento)) {
+            switch(evento.type) {
+                case sf::Event::Closed:
+                    window.close(); // Fecha o jogo
+                    break;
+
+                case sf::Event::KeyPressed:
+                    if (evento.key.code == sf::Keyboard::Escape) {
+                        window.close(); // Fecha o jogo
+                    }
+                    break;
             }
         }
-        window.display();
+
+        window.clear(); // Limpa a tela
+
+        window.display(); // Atualiza a tela
+
         
     }
 
