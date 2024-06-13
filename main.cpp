@@ -1,36 +1,21 @@
 #include <iostream>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Network.hpp>
-#include "include/Char.h"
+
+
+#include "include/Game.h"
+/*
+    Dentro de Game.h temos todos os "include" do SFML, portanto nao precisamos fazer
+    o include deles novamente.
+*/
+
 
 
 int main(int argc, char const *argv[]) {
+    Game game;
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "PokeUFSC", sf::Style::Titlebar | sf::Style::Close);
-    sf::Event evento;
-    while (window.isOpen()) {
-        while (window.pollEvent(evento)) {
-            switch(evento.type) {
-                case sf::Event::Closed:
-                    window.close(); // Fecha o jogo
-                    break;
+    while (game.getWindowIsOpen()) {
+        game.update();
 
-                case sf::Event::KeyPressed:
-                    if (evento.key.code == sf::Keyboard::Escape) {
-                        window.close(); // Fecha o jogo
-                    }
-                    break;
-            }
-        }
-
-        window.clear(); // Limpa a tela
-
-        window.display(); // Atualiza a tela
-
-        
+        game.render();        
     }
 
     return 0;

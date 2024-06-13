@@ -1,13 +1,69 @@
 #include "../include/Game.h"
+#include "../include/shared.h"
 
-Game::Game() {
+void Game::initVariables() {
+    this->window = nullptr;
+
+}
+
+void Game::initWindow() {
+    this->videoM.height = gameHeight;
+    this->videoM.width = gameWidth;
     
+    this->window = new sf::RenderWindow(this->videoM, "PokeUFSC", sf::Style::Titlebar | sf::Style::Close);
+
+}
+
+Game::Game() {  // Construtor
+    this->initVariables();
+    this->initWindow();
+}
+
+Game::~Game() {  // Desconstrutor 
+    delete this->window;
+}
+
+const bool Game::getWindowIsOpen() const {
+    return this->window->isOpen();
+}
+
+void Game::updateEvents() {
+    while (this->window->pollEvent(this->evento)) {
+            switch(this->evento.type) {
+                case sf::Event::Closed:
+                    this->window->close(); // Fecha o jogo
+                    break;
+
+                case sf::Event::KeyPressed:
+                    if (this->evento.key.code == sf::Keyboard::Escape) {
+                        this->window->close(); // Fecha o jogo
+                    }
+                    break;
+            }
+        }
 }
 
 void Game::update() {
-
+    this->updateEvents();
 }
+
 
 void Game::render() {
 
 }
+
+
+/*
+while (window.pollEvent(evento)) {
+            switch(evento.type) {
+                case sf::Event::Closed:
+                    window.close(); // Fecha o jogo
+                    break;
+
+                case sf::Event::KeyPressed:
+                    if (evento.key.code == sf::Keyboard::Escape) {
+                        window.close(); // Fecha o jogo
+                    }
+                    break;
+            }
+        }*/
