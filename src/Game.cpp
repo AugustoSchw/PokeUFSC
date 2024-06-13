@@ -1,5 +1,4 @@
 #include "../include/Game.h"
-#include "../include/shared.h"
 
 void Game::initVariables() {
     this->window = nullptr;
@@ -11,7 +10,6 @@ void Game::initWindow() {
     this->videoM.width = gameWidth;
     
     this->window = new sf::RenderWindow(this->videoM, "PokeUFSC", sf::Style::Titlebar | sf::Style::Close);
-
 }
 
 Game::Game() {  // Construtor
@@ -24,7 +22,7 @@ Game::~Game() {  // Desconstrutor
 }
 
 const bool Game::getWindowIsOpen() const {
-    return this->window->isOpen();
+    return this->window->isOpen();  // Argumento do While em main.cpp
 }
 
 void Game::updateEvents() {
@@ -49,21 +47,7 @@ void Game::update() {
 
 
 void Game::render() {
+    this->window->clear();  // Apaga frame anterior
 
+    this->window->display();    // Mostra frame atual
 }
-
-
-/*
-while (window.pollEvent(evento)) {
-            switch(evento.type) {
-                case sf::Event::Closed:
-                    window.close(); // Fecha o jogo
-                    break;
-
-                case sf::Event::KeyPressed:
-                    if (evento.key.code == sf::Keyboard::Escape) {
-                        window.close(); // Fecha o jogo
-                    }
-                    break;
-            }
-        }*/

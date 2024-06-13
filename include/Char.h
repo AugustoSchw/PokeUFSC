@@ -1,7 +1,9 @@
 #pragma once    // Evita duplicamento
+#include "shared.h"
 
 class Char {
     private:
+        sf::Sprite sprite;
         int size[2];
         int position[2];
         int speed;
@@ -10,7 +12,7 @@ class Char {
         // Vai ser adicionado um ponteiro que servira como a lista de pokemon
 
     public: 
-        Char(int size[2], int position[2], int speed, int directionx, int directiony);
+        Char(int size[2], int position[2], int speed, int directionx, int directiony, sf::Sprite sprite);
         int *getSize();
         int *getPosition();
         int getSpeed();

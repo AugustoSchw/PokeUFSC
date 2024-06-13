@@ -1,5 +1,7 @@
-int gameHeight = 600;
-int gameWidth = 800;
+int tileSize = 16;
+
+int gameHeight = tileSize*37;
+int gameWidth = tileSize*50;
 
 
 

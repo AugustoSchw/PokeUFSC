@@ -1,0 +1,51 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "mundoteste.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Todos os Ficheiros (*)",
+    "fileStates": {
+        "Overworld.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "character.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "mundoteste.tmx": {
+            "scale": 1.5004222972972971,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 390.556712637208,
+                "y": 410.2178440754293
+            }
+        }
+    },
+    "last.imagePath": "/home/augusto/Documentos/cpp_related/PokeUFSC/assets/tilesets",
+    "map.height": 37,
+    "map.lastUsedFormat": "tmx",
+    "map.orientation": "1",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 50,
+    "openFiles": [
+        "mundoteste.tmx",
+        "character.tsx",
+        "Overworld.tsx"
+    ],
+    "project": "mundo.tiled-project",
+    "recentFiles": [
+        "Overworld.tsx",
+        "character.tsx",
+        "mundoteste.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

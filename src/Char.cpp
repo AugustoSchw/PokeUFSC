@@ -1,7 +1,8 @@
 #include "../include/Char.h"
 
-Char::Char(int size[2], int position[2], int speed, int directionx, int directiony) {
 
+
+Char::Char(int size[2], int position[2], int speed, int directionx, int directiony, sf::Sprite sprite) {
     this->size[0] = size[0];
     this->size[1] = size[1];
     this->position[0] = position[0];
@@ -9,6 +10,7 @@ Char::Char(int size[2], int position[2], int speed, int directionx, int directio
     this->speed = speed;
     this->directionx = directionx;
     this->directiony = directiony;
+    this->sprite = sprite;
 }
 
 
