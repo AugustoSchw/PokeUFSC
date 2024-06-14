@@ -51,3 +51,6 @@ void Game::render() {
 
     this->window->display();    // Mostra frame atual
 }
+sf::RenderWindow *Game::getWindow() {
+    return this->window;
+}

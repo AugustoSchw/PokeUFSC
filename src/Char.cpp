@@ -1,8 +1,7 @@
 #include "../include/Char.h"
 
+Char::Char(int size[2], int position[2], int speed, int directionx, int directiony, sf::Texture sprite) {
 
-
-Char::Char(int size[2], int position[2], int speed, int directionx, int directiony, sf::Sprite sprite) {
     this->size[0] = size[0];
     this->size[1] = size[1];
     this->position[0] = position[0];
@@ -10,13 +9,13 @@ Char::Char(int size[2], int position[2], int speed, int directionx, int directio
     this->speed = speed;
     this->directionx = directionx;
     this->directiony = directiony;
-    this->sprite = sprite;
+    this->sprite.setTexture(sprite);
 }
 
 
 int *Char::getSize() {
-    return this->size; //oi
-}
+    return this->size; 
+}       
 
 int *Char::getPosition() {
     return this->position;
@@ -47,4 +46,9 @@ void Char::setPosition(int position[2]) {
 
 void Char::setSpeed(int speed) {
     this->speed = speed;
+}
+
+void Char::update(Game game) {
+    sf::RenderWindow *window = game.getWindow();
+    window->draw(this->sprite);
 }

@@ -22,8 +22,7 @@ class Game {
         void updateEvents();
         void update();
         void render();
-
-
+        sf::RenderWindow* getWindow();
 };
 
 
